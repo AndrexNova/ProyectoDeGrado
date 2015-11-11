@@ -74,7 +74,7 @@ public function showDetails(){
         $to = $this->_total;
     }
     $xhtml = "<strong>".$this->_total."</strong> registros encontrados en <strong>";
-    $xhtml.= $this->_numberPages."</strong> páginas, mostrando del registro";
+    $xhtml.= $this->_numberPages."</strong> páginas, mostrando del registro ";
     $xhtml.= $this->_from." al ".$to;
     return $xhtml;
 }

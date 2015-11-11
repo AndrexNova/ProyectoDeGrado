@@ -10,19 +10,27 @@ if (!isset($DOM["SECURITY_ID"])) {
     <div class="table-responsive">
         <table class="table table-striped table-condensed" border="0" width="100%">
             <tbody>
+<!--                <tr>
+                    <td><label class="col-sm-12 control-label">Id</label></td>
+                    <td>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control error" id="id_programa" name="id_programa" size="40" tabindex="1" required aria-required="true" aria-invalid="true"/>
+                        </div>
+                    </td>
+                </tr>-->
                 <tr>
                     <td><label class="col-sm-12 control-label">Nombre</label></td>
                     <td>
                         <div class="col-sm-12">
-                            <input type="text" maxlength="50" class="form-control error" id="nombre" name="nombre" size="40" tabindex="1" required aria-required="true" aria-invalid="true"/>
+                            <input type="text" class="form-control error" id="nombre" maxlength="50"  name="nombre" size="40" tabindex="1" required aria-required="true" aria-invalid="true"/>
                         </div>
                     </td>
-                </tr>                
+                </tr>
                 <tr>
                     <td><label class="col-sm-12 control-label">Facultad</label></td>
                     <td>
                         <div class="col-sm-12">
-                         <?php echo $Formulario->addObject("MenuList", "facultad", $DOM["COMOBOFACULTAD"], "", "") ?>                                
+                            <input type="text" class="form-control error" id="facultad" maxlength="50"  name="facultad" size="40" tabindex="1" required aria-required="true" aria-invalid="true"/>
                         </div>
                     </td>
                 </tr>
@@ -30,7 +38,7 @@ if (!isset($DOM["SECURITY_ID"])) {
                     <td><label class="col-sm-12 control-label">Nivel</label></td>
                     <td>
                         <div class="col-sm-12">
-                         <?php echo $Formulario->addObject("MenuList", "nivel", $DOM["COMOBONIVEL"], "", "") ?>                                
+                            <input type="text" class="form-control error" maxlength="50" id="nivel" name="nivel" size="40" tabindex="1" required aria-required="true" aria-invalid="true"/>
                         </div>
                     </td>
                 </tr>
@@ -38,7 +46,7 @@ if (!isset($DOM["SECURITY_ID"])) {
                     <td><label class="col-sm-12 control-label">Snies</label></td>
                     <td>
                         <div class="col-sm-12">
-                            <input type="text" maxlength="10" class="form-control error" id="snies" name="snies" size="40" tabindex="4" required aria-required="true" aria-invalid="true"/>
+                            <input type="text" class="form-control error"  maxlength="10"  id="snies" name="snies" size="40" tabindex="1" required aria-required="true" aria-invalid="true"/>
                         </div>
                     </td>
                 </tr>

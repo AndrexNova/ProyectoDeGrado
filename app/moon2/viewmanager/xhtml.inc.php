@@ -144,7 +144,7 @@ function xhtml_body_open($type, $dataPath, $dataDomain, $bodyClass) {
         break;
  case "HOMOLO":
             $login = $dataPath["QUIT"] . "/login.php";
-            $homologacion= $dataPath["HOMOLOGACION"]."/index.php";
+            $homologacion= $dataPath["HOMOLOGACION"];
             $html = "<body{$bodyClass}>\n";
             $html.= "<nav role=\"navigation\" class=\"navbar navbar-inverse\">\n";
             $html.= "   <div class=\"container\">\n";
@@ -210,7 +210,7 @@ function xhtml_body_open($type, $dataPath, $dataDomain, $bodyClass) {
         break;
         case "LOGIN":
           $login = $dataPath["QUIT"] . "/login.php";
-            $homologacion= $dataPath["HOMOLOGACION"]."/index.php";
+            $homologacion= $dataPath["HOMOLOGACION"];
             $html = "<body{$bodyClass}>\n";
             $html.= "<nav role=\"navigation\" class=\"navbar navbar-inverse\">\n";
             $html.= "   <div class=\"container\">\n";

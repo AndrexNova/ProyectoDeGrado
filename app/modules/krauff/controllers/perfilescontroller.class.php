@@ -49,7 +49,7 @@ private function crear(){
     $this->_parameters->add("msg", $msg);
     $this->_parameters->add("codperfil", $obj->get_codperfil());
     $cadenaUrl = $this->_parameters->KeyGen();
-    //exit();
+    exit();
     $this->_url = $this->_path_config["ROOT"]["modules"]."/krauff/views/perfiles_admin.php?".$cadenaUrl;
     $script = "<script>\n";
     $script.= "window.parent.location.href = '{$this->_url}';\n";

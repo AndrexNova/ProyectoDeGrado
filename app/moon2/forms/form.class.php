@@ -32,6 +32,23 @@ public function addObject($type, $fieldName, $arrValues, $selectedId, $options, 
 	return $xhtml;
 }
 
+public function addObject2($type, $fieldName, $arrValues, $selectedId, $options, $style=""){
+ 
+	$this->_type = $type;
+	$this->_fieldName = $fieldName;
+	$this->_arrValues = $arrValues;
+	$this->_selectedId = $selectedId;
+	$this->_options = $options;
+	$this->_id = $this->checkId($fieldName);
+	$this->_style = $style;
+
+	$xhtml = $this->buildHeader2();
+	$xhtml.= $this->buildBody();
+	$xhtml.= $this->buildFooter();
+	return $xhtml;
+}
+
+
 private function buildHeader(){
     $xhtml = "";
     switch($this->_type){
@@ -45,6 +62,24 @@ private function buildHeader(){
     }
     return $xhtml;
 }
+
+
+
+private function buildHeader2(){
+    
+    $xhtml = "";
+    switch($this->_type){
+        case "MenuList":
+            $class_style = "class=\"".$this->_style."\"";
+            if (empty($this->_style)){
+                $class_style = "";
+            }
+            $xhtml = "<select onchange='combo_ajax();' name=\"{$this->_fieldName}\" id=\"{$this->_id}\" {$this->_options} {$class_style}>\n";
+            break;
+    }
+    return $xhtml;
+}
+
 
 private function buildFooter(){
 	$xhtml = "";

@@ -16,6 +16,7 @@ if (empty($SECURITY_ID)){
 //EN
 
 
+
 if (count($Controller)>2){
     $String_Controller = $Controller[0]."_".$Controller[1]."_Controllers_".$Controller[2];
 }else{

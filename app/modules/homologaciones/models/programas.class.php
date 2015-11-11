@@ -9,9 +9,8 @@ class Modules_Homologaciones_Model_Programas {
     private $_snies;                               //Varchar 200
     
     
-    function __construct() {
-        
-    }
+    
+    function __construct() {}
 
     public function get_id_programa() {
         return $this->_id_programa;
@@ -35,7 +34,7 @@ class Modules_Homologaciones_Model_Programas {
 
 
 
-    public function set_codempresa($_id_programa) {
+    public function set_id_programa($_id_programa) {
         $this->_id_programa = $_id_programa;
     }
 

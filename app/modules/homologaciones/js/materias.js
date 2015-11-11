@@ -22,6 +22,10 @@ function checkform_ajax(idFrm){
     }
     return false;
 }
+
+
+
+
 //Flotante eliminar - Inicio
 $(function () {
     $('#melleva').on('click', 'a.msgbox-confirm', function (e) {
@@ -108,4 +112,7 @@ $(document).ready(function(){
         $('#contenedorIframeeditar').attr('src', '');
     });
 });
+
+
+
 

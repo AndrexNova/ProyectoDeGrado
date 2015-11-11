@@ -15,13 +15,11 @@ $Formulario = new Moon2_Forms_Form();
 //Gestor de la página
 $Face = new Moon2_ViewManager_Controller();
 $componente = $userFunc->getComponent("Mantenimiento Tablas");
-$Face->set_bodyClass(" class=\"gray-bg\"");
-
 $Face->set_name("Crear Programas");
 $Face->set_component($componente);
-$Face->add_javascript("../js/programas_flotantes.js");
-$Face->set_type("FLOAT");
-$Face->set_sysmenu(false);
+$Face->add_javascript("../js/programas.js");
+$Face->set_type("INSIDE");
+$Face->set_sysmenu(TRUE);
 
 //$Face->add_navigation("Programas", "#");
 //$Face->add_navigation("Listado", "programas_admin.php");

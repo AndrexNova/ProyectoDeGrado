@@ -21,44 +21,52 @@ $Formulario = new Moon2_Forms_Form();
 
 //Gestor de la página
 $Face = new Moon2_ViewManager_Controller();
-$componente = $userFunc->getComponent("Programas");
-$Face->set_name("Programas - Administrar");
+$componente = $userFunc->getComponent("Materias");
+$Face->set_name("Materias - Administrar");
 $Face->set_component($componente);
-$Face->add_javascript("../js/programas.js");
+$Face->add_javascript("../js/materias.js");
 $Face->set_type("INSIDE");
 $Face->add_navigation("Inicio", "../../main/views/index.php");
 $Face->add_navigation("Programas", "#");
-$Face->add_navigation("Administrar Programas", "#");
+$Face->add_navigation("Administrar Materias", "materias_admin.php");
 
 //Lógica del negocio
 $arr_cabeceras_tabla = array();
-$arr_cabeceras_tabla[1]["name"] = "Nombre";
-$arr_cabeceras_tabla[1]["size"] = " width=\"30%\"";
-$arr_cabeceras_tabla[1]["order"] = "p.id_programa";
+$arr_cabeceras_tabla[1]["name"] = "Nomenclatura";
+$arr_cabeceras_tabla[1]["size"] = " width=\"10%\"";
+$arr_cabeceras_tabla[1]["order"] = "m.id_materia";
 
-$arr_cabeceras_tabla[2]["name"] = "Facultad";
-$arr_cabeceras_tabla[2]["size"] = " width=\"30%\"";
+$arr_cabeceras_tabla[2]["name"] = "Nombre";
+$arr_cabeceras_tabla[2]["size"] = " width=\"35%\"";
 $arr_cabeceras_tabla[2]["order"] = "";
 
-$arr_cabeceras_tabla[3]["name"] = "Nivel";
-$arr_cabeceras_tabla[3]["size"] = " width=\"20%\"";
+$arr_cabeceras_tabla[3]["name"] = "Ponderación";
+$arr_cabeceras_tabla[3]["size"] = " width=\"10%\"";
 $arr_cabeceras_tabla[3]["order"] = "";
 
-$arr_cabeceras_tabla[4]["name"] = "SNIES";
+$arr_cabeceras_tabla[4]["name"] = "Semestre";
 $arr_cabeceras_tabla[4]["size"] = " width=\"10%\"";
 $arr_cabeceras_tabla[4]["order"] = "";
 
-$arr_cabeceras_tabla[5]["name"] = "";
-$arr_cabeceras_tabla[5]["size"] = " width=\"10%\"";
+$arr_cabeceras_tabla[5]["name"] = "Programa";
+$arr_cabeceras_tabla[5]["size"] = " width=\"30%\"";
 $arr_cabeceras_tabla[5]["order"] = "";
 
-$FacadeProgramas = new Modules_Homologaciones_Model_ProgramasFacade();
+$arr_cabeceras_tabla[6]["name"] = "Estado";
+$arr_cabeceras_tabla[6]["size"] = " width=\"10%\"";
+$arr_cabeceras_tabla[6]["order"] = "";
+
+$arr_cabeceras_tabla[7]["name"] = "";
+$arr_cabeceras_tabla[7]["size"] = " width=\"5%\"";
+$arr_cabeceras_tabla[7]["order"] = "";
+
+$FacadeMaterias = new Modules_Homologaciones_Model_MateriasFacade();
 $rsNumRows = 0;
 $Data = array();
 $Data["order"] = $arr_cabeceras_tabla[$order]["order"];
 $Data["search"][$combo_campos] = $caja_busqueda;
-$FacadeProgramas->add_searchField($combo_campos, $caja_busqueda);
-$filas = $FacadeProgramas->load_all($rsNumRows, $limit_numrows, $num_page, $Data);
+$FacadeMaterias->add_searchField($combo_campos, $caja_busqueda);
+$filas = $FacadeMaterias->load_all($rsNumRows, $limit_numrows, $num_page, $Data);
 $cantidad_filas = count($filas);
 
 //Ejemplo para mensajes flotantes

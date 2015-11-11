@@ -17,15 +17,15 @@ $Face = new Moon2_ViewManager_Controller();
 $componente = $userFunc->getComponent("Mantenimiento Tablas");
 $Face->set_bodyClass(" class=\"gray-bg\"");
 
-$Face->set_name("Crear Programas");
+$Face->set_name("Crear Materias");
 $Face->set_component($componente);
-$Face->add_javascript("../js/programas_flotantes.js");
+$Face->add_javascript("../js/materias_flotantes.js");
 $Face->set_type("FLOAT");
 $Face->set_sysmenu(false);
 
-//$Face->add_navigation("Programas", "#");
-//$Face->add_navigation("Listado", "programas_admin.php");
-//$Face->add_navigation("Creacion de Programas", "#");
+//armando el combo de programas
+$FacadeProgramas = new Modules_Homologaciones_Model_ProgramasFacade();
+$arr_programas = $FacadeProgramas->comboprogramas();
 
 //Despliegue de la página en xhtml
 echo $Face->open();

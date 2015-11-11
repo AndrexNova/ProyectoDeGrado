@@ -7,6 +7,34 @@ $DOM["FMESSAGE"]["warning"] = 2;
 $DOM["FMESSAGE"]["error"] = 3;
 $DOM["FMESSAGE"]["info"] = 4;
 
+//combo de estado materia
+$DOM["COMBOESTADO"]["A"] = "Habilitado";
+$DOM["COMBOESTADO"]["I"] = "Inhabilitado";
+
+//combo busqueda MATERIAS
+$DOM["COMBOMATERIAS"]["m.nomenclatura"] = "Nomenclatura";
+$DOM["COMBOMATERIAS"]["m.nombre"] = "Nombre";
+$DOM["COMBOMATERIAS"]["m.ponderacion"] = "Ponderación";
+$DOM["COMBOMATERIAS"]["m.semestre"] = "Semestre";
+$DOM["COMBOMATERIAS"]["p.nombre"] = "Programa";
+$DOM["COMBOMATERIAS"]["m.estado"] = "Estado";
+
+//combo de nivel programa
+$DOM["COMOBONIVEL"]["TECNOLOGICO"] = "TECNOLÓGICO";
+$DOM["COMOBONIVEL"]["UNIVERSITARIO"] = "UNIVERSITARIO";
+
+//combo de facultad programa
+$DOM["COMOBOFACULTAD"]["CIENCIAS NATURALES E INGENIERÍAS"] = "CIENCIAS NATURALES E INGENIERIAS";
+$DOM["COMOBOFACULTAD"]["CIENCIAS SOCIECONOMICAS Y EMPRESARIALES"] = "CIENCIAS SOCIECONOMICAS Y EMPRESARIALES";
+
+//combo busqueda programas
+//$DOM["COMBOPROGRAMAS"]["id_programa"] = "Codigo";
+$DOM["COMBOPROGRAMAS"]["p.nombre"] = "Nombre";
+$DOM["COMBOPROGRAMAS"]["p.facultad"] = "Facultad";
+$DOM["COMBOPROGRAMAS"]["p.nivel"] = "Nivel";
+$DOM["COMBOPROGRAMAS"]["p.snies"] = "Snies";
+
+
 
 $DOM["GENERO"][1] = "Masculino";
 $DOM["GENERO"][2] = "Femenino";
@@ -178,7 +206,7 @@ $DOM["ESTADOS"][2] = "En Proceso";
 $DOM["ESTADOS"][3] = "Inactivo";
 
 //combo busqueda BancoProyectos - Programas
-$DOM["COMBOPROGRAMAS"]["p.nombreprograma"] = "Nombre del programa";;
+//$DOM["COMBOPROGRAMAS"]["p.nombreprograma"] = "Nombre del programa";;
 
 //combo busqueda BancoProyectos - docente
 $DOM["COMBOTEMASdos"]["t.titulo"] = "Titulo";
