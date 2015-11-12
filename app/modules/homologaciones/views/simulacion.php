@@ -12,7 +12,8 @@ $Params->verify("AJAX_GET",false);
 $msg = $Params->get_parameter("msg", "");
 
 $id_programa = $Params->get_parameter("id_programa", "0");
-    
+ $id_programa2 = $Params->get_parameter("id_programa2", "0");
+   
 
 $combo_campos = $Params->get_parameter("nomcampos", "0");
 //$caja_busqueda = $Params->get_parameter("buscar", "");
@@ -39,11 +40,11 @@ $Face->set_sysmenu(false);
 
 $arr_cabeceras_tabla = array();
 $arr_cabeceras_tabla[1]["name"] = "Nomenclatura";
-$arr_cabeceras_tabla[1]["size"] = " width=\"20%\"";
+$arr_cabeceras_tabla[1]["size"] = " width=\"10%\"";
 $arr_cabeceras_tabla[1]["order"] = "m.id_materia";
 
 $arr_cabeceras_tabla[2]["name"] = "Nombre";
-$arr_cabeceras_tabla[2]["size"] = " width=\"20%\"";
+$arr_cabeceras_tabla[2]["size"] = " width=\"70%\"";
 $arr_cabeceras_tabla[2]["order"] = "";
 
 
@@ -52,25 +53,33 @@ $arr_cabeceras_tabla[3]["size"] = " width=\"20%\"";
 $arr_cabeceras_tabla[3]["order"] = "";
 
 
+if($id_programa2){
 
+$arr_cabeceras_tabla2[1]["name"] = "Nomenclatura";
+$arr_cabeceras_tabla2[1]["size"] = " width=\"10%\"";
+$arr_cabeceras_tabla2[1]["order"] = "m.id_materia";
 
-$arr_cabeceras_tabla[4]["name"] = "Nomenclatura";
-$arr_cabeceras_tabla[4]["size"] = " width=\"20%\"";
-$arr_cabeceras_tabla[4]["order"] = "m.id_materia";
+$arr_cabeceras_tabla2[2]["name"] = "Nombre";
+$arr_cabeceras_tabla2[2]["size"] = " width=\"90%\"";
+$arr_cabeceras_tabla2[2]["order"] = "";
 
-$arr_cabeceras_tabla[5]["name"] = "Nombre";
-$arr_cabeceras_tabla[5]["size"] = " width=\"20%\"";
-$arr_cabeceras_tabla[5]["order"] = "";
-
-
+}
 //armando el combo de programas
 $FacadeProgramas = new Modules_Homologaciones_Model_ProgramasFacade();
 $arr_programas = $FacadeProgramas->comboprogramas($id_programa);
+
+//armando el combo de programas
+
+
+$FacadeProgramas = new Modules_Homologaciones_Model_ProgramasFacade();
+$arr_programas2 = $FacadeProgramas->comboprogramas($id_programa2);
 
 
 //////armando el combo de materias
 //$FacadeMaterias = new Modules_Homologaciones_Model_MateriasFacade();
 //$arr_materias = $FacadeMaterias->combomaterias2($id_programa);
+
+
 
 $FacadeMaterias = new Modules_Homologaciones_Model_MateriasFacade();
 $rsNumRows = 0;
@@ -80,6 +89,23 @@ $filas = $FacadeMaterias->load_all2($rsNumRows, $limit_numrows, $num_page, $id_p
 $cantidad_filas = count($filas);
 
 
+if($id_programa2){
+
+$FacadeMaterias2 = new Modules_Homologaciones_Model_MateriasFacade();
+$rsNumRows2 = 0;
+$Data2 = array();
+$Data["order"] = $arr_cabeceras_tabla2[$order]["order"];
+
+$filas2 []='';
+
+foreach ($filas as $indice => $campo) {
+        $filas2[$campo["id_materia"]]=$FacadeMaterias2->load_all3($rsNumRows, $limit_numrows, $num_page, $id_programa2, $Data,$campo["id_materia"]);
+}
+         
+
+global $filas2;
+$cantidad_filas2 = count($filas2);
+}
 
 //Despliegue de la página en xhtml
 echo $Face->open();

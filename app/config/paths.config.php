@@ -23,7 +23,7 @@ $PATH_CONFIG["ROOT"]["modules"]     = $PATH_CONFIG["APP"]."modules";
 $PATH_CONFIG["ROOT"]["javascripts"] = $PATH_CONFIG["APP"]."moon2/javas";
 $PATH_CONFIG["MAINPAGE"]            = $PATH_CONFIG["ROOT"]["modules"]."/main";
 $PATH_CONFIG["QUIT"]                = $PATH_CONFIG["ROOT"]["modules"]."/krauff/views";
-$PATH_CONFIG["HOMOLOGACION"]        = $PATH_CONFIG["ROOT"]["modules"]."/homologaciones/views/prueba.php";
+$PATH_CONFIG["HOMOLOGACION"]        = $PATH_CONFIG["ROOT"]["modules"]."/homologaciones/views/simulacion.php";
 
 
 //$PATH_CONFIG["ROOT"]["processform"] = $PATH_CONFIG["ROOT"]["moon"]."/viewmanager";

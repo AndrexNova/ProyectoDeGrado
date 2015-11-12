@@ -37,6 +37,10 @@ class Modules_Homologaciones_Model_MateriasFacade implements Moon2_Interfaces_Ma
         return $this->_materiasDB->load_all2($rsNumRows, $limit_numrows, $page,$id_programa, $Data);
     }
 
+            public function load_all3(&$rsNumRows, $limit_numrows, $page, $id_programa, $Data = array(),$id_materia) {
+        return $this->_materiasDB->load_all3($rsNumRows, $limit_numrows, $page,$id_programa, $Data,$id_materia);
+    }
+    
     public function load_all_admin($rsNumRows, $limit_numrows, $page, $Data = array()) {
         return $this->_materiasDB->load_all_admin($rsNumRows, $limit_numrows, $page, $Data);
     }

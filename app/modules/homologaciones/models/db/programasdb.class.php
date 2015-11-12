@@ -65,5 +65,24 @@ class Modules_Homologaciones_ModelDb_ProgramasDb extends Moon2_DBmanager_PDO {
         }
         return $funcArray;
     }
+    
+    
+        
+    public function comboprogramas2($id_programa) {
+        
+            $sql = "SELECT id_programa, nombre ";
+            $sql.= "FROM programas where id_programa ='$id_programa'";
+            $sql.= " UNION ALL ";
+            $sql.= "SELECT id_programa, nombre ";
+            $sql.= "FROM programas where id_programa != '$id_programa'";
+            $funcArray = $this->GetAssoc($sql);
+            
+        if(!$id_programa){
+        $funcArray['000']='';
+        ksort($funcArray);
+        }
+        return $funcArray;
+    }
+    
 }//End class
 ?>
